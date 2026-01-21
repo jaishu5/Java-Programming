@@ -1,0 +1,59 @@
+import java.io.*;
+import java.util.*;
+
+public class FileHandlingUtility {
+
+    static String fileName = "sample.txt";
+
+    // Write data to file
+    public static void writeToFile() {
+        try {
+            FileWriter writer = new FileWriter(fileName);
+            writer.write("Hello World!\n");
+            writer.write("This is a Java File Handling Program.\n");
+            writer.write("File operations include Read, Write, and Modify.\n");
+            writer.close();
+            System.out.println("Data written to file successfully.\n");
+        } catch (IOException e) {
+            System.out.println("Error while writing to file.");
+        }
+    }
+
+    // Read data from file
+    public static void readFromFile() {
+        try {
+            File file = new File(fileName);
+            Scanner sc = new Scanner(file);
+            System.out.println("Reading file contents:\n");
+            while (sc.hasNextLine()) {
+                System.out.println(sc.nextLine());
+            }
+            sc.close();
+            System.out.println();
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found.");
+        }
+    }
+
+    // Modify file by appending new data
+    public static void modifyFile() {
+        try {
+            FileWriter writer = new FileWriter(fileName, true);
+            writer.write("This line is added while modifying the file.\n");
+            writer.close();
+            System.out.println("File modified successfully.\n");
+        } catch (IOException e) {
+            System.out.println("Error while modifying file.");
+        }
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println("---- FILE HANDLING UTILITY ----\n");
+
+        writeToFile();     // Write operation
+        readFromFile();    // Read operation
+        modifyFile();      // Modify operation
+        readFromFile();    // Read again to verify modification
+    }
+}
