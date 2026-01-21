@@ -1,0 +1,18 @@
+---- FILE HANDLING UTILITY ----
+
+Data written to file successfully.
+
+Reading file contents:
+
+Hello World!
+This is a Java File Handling Program.
+File operations include Read, Write, and Modify.
+
+File modified successfully.
+
+Reading file contents:
+
+Hello World!
+This is a Java File Handling Program.
+File operations include Read, Write, and Modify.
+This line is added while modifying the file.
